@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-01-servlet/SpringMVC-01-servlet.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-01-servlet/SpringMVC-01-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-02-helloMVC/SpringMVC-02-helloMVC.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-02-helloMVC/SpringMVC-02-helloMVC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-03-annotaion/SpringMVC-03-annotaion.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-03-annotaion/SpringMVC-03-annotaion.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-2020-07-28.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-2020-07-28.iml" />
     </modules>
   </component>

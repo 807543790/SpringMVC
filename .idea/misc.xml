@@ -6,6 +6,11 @@
         <option value="$PROJECT_DIR$/SpringMVC-2020-07-28/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-02-helloMVC/SpringMVC-03-annotaion/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager">
     <output url="file://$PROJECT_DIR$/out" />

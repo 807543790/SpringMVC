@@ -1,10 +1,10 @@
 package com.zhangbin.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+        import org.springframework.stereotype.Controller;
+        import org.springframework.ui.Model;
+        import org.springframework.web.bind.annotation.DeleteMapping;
+        import org.springframework.web.bind.annotation.GetMapping;
+        import org.springframework.web.bind.annotation.PathVariable;
 
 /**
  * 认认真真敲代码，开开心心每一天
@@ -21,7 +21,7 @@ public class RestFulController {
     //@RequestMapping(value = "/add/{a}/{b}",method = RequestMethod.DELETE)
 //    @DeleteMapping("/add/{a}/{b}")
 
-//    效果相等
+    //    效果相等
     //@RequestMapping(value = "/add/{a}/{b}",method = RequestMethod.GET)
     @GetMapping("/add/{a}/{b}")
     public String test01(@PathVariable int a,@PathVariable int b, Model model){

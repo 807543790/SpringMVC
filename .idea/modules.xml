@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-03-annotaion/SpringMVC-03-annotaion.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-03-annotaion/SpringMVC-03-annotaion.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-04-controller/SpringMVC-04-controller.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-04-controller/SpringMVC-04-controller.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-2020-07-28.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-2020-07-28.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-JSON-01/SpringMVC-JSON-01.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-JSON-01/SpringMVC-JSON-01.iml" />
     </modules>
   </component>
 </project>

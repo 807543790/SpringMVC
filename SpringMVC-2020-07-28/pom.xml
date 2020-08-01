@@ -13,6 +13,10 @@
         <module>SpringMVC-02-helloMVC</module>
         <module>SpringMVC-03-annotaion</module>
         <module>SpringMVC-04-controller</module>
+        <module>SpringMVC-05-json</module>
+        <module>SpringMVC-06-JSON</module>
+        <module>SpringMVC-05-JSON</module>
+        <module>SpringMVC-JSON-01</module>
     </modules>
 
     <!--mvc依赖-->
@@ -41,6 +45,18 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+        <!--lombok插件 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+        </dependency>
+        <!--jackson:JSON-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.0</version>
         </dependency>
     </dependencies>
 

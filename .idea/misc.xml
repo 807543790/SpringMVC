@@ -9,6 +9,8 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-02-helloMVC/SpringMVC-03-annotaion/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-05-JSON/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-05-json/pom.xml" />
       </set>
     </option>
   </component>

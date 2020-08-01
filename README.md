@@ -52,7 +52,7 @@
         <context:component-scan base-package="com.zhangbin.controller"/>
         <!--让springMVC不处理静态资源 css html等-->
         <mvc:default-servlet-handler/>
-        <!--直接MVC的注解-->
+         <!--直接MVC的注解。省掉处理器，适配器，映射器-->
         <mvc:annotation-driven/>
         <!--视图解析器：DispatcherServlet给他的ModelAndView-->
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">

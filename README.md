@@ -271,7 +271,7 @@ web.xml文件添加
     @ResponseBody
     这个注解表示不会走视图解析器，会直接返回一个字符串，配合@Controller注解使用
 ```
-2.JSON传输数据
+2.jackson传输数据
     
     步骤一：导入包
     <dependency>
@@ -299,7 +299,7 @@ web.xml文件添加
         
     步骤三：直接使用即可
     
-3.使用json
+3.使用jackson
 ```java
     package com.zhangbin.controller;
     
@@ -433,3 +433,35 @@ web.xml文件添加
     }
 
 ```
+
+###使用fastjson的JSON
+
+    1.导入包
+       <!--阿里巴巴json-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.68</version>
+            </dependency>
+    2.直接调用
+    //【5】使用fastjson，阿里巴巴写的
+        @RequestMapping( "/json4")
+        public String test4() throws JsonProcessingException {
+    
+            ArrayList<User> list = new ArrayList<User>();
+    
+            User user = new User(1, "张斌");
+            User user1 = new User(2, "张斌");
+            User user2 = new User(3, "张斌");
+            User user3 = new User(4, "张斌");
+    
+            list.add(user);
+            list.add(user1);
+            list.add(user2);
+            list.add(user3);
+            
+            //  使用alibaba的JSON
+            String string = JSON.toJSONString(list);
+    
+            return string;
+        }        

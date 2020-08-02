@@ -13,9 +13,6 @@
         <module>SpringMVC-02-helloMVC</module>
         <module>SpringMVC-03-annotaion</module>
         <module>SpringMVC-04-controller</module>
-        <module>SpringMVC-05-json</module>
-        <module>SpringMVC-06-JSON</module>
-        <module>SpringMVC-05-JSON</module>
         <module>SpringMVC-JSON-01</module>
     </modules>
 
@@ -57,6 +54,12 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.11.0</version>
+        </dependency>
+        <!--阿里巴巴json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.68</version>
         </dependency>
     </dependencies>
 

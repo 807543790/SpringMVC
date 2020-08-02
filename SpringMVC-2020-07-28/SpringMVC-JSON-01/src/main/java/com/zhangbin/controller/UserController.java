@@ -1,5 +1,6 @@
 package com.zhangbin.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -83,5 +84,27 @@ public class UserController {
 
 //        将数据传输给工具类，获取JSON时间
         return JsonUtils.getJson(new Date(), "yyyy-MM-dd HH:mm:ss");
+    }
+
+    //【5】使用fastjson，阿里巴巴写的
+    @RequestMapping( "/json4")
+    public String test4() throws JsonProcessingException {
+
+        ArrayList<User> list = new ArrayList<User>();
+
+        User user = new User(1, "张斌");
+        User user1 = new User(2, "张斌");
+        User user2 = new User(3, "张斌");
+        User user3 = new User(4, "张斌");
+
+        list.add(user);
+        list.add(user1);
+        list.add(user2);
+        list.add(user3);
+
+        //  使用alibaba的JSON
+        String string = JSON.toJSONString(list);
+
+        return string;
     }
 }

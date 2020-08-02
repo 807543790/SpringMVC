@@ -260,3 +260,176 @@ web.xml文件添加
     </filter-mapping>
 
 ```
+
+# SpringMVC-05-JSON
+1.学习的注解
+```java
+
+    @RestController
+    这个注解表示该方法下的所有都不会走视图解析器，会直接返回一个字符串，和ResponseBody差不多
+    
+    @ResponseBody
+    这个注解表示不会走视图解析器，会直接返回一个字符串，配合@Controller注解使用
+```
+2.JSON传输数据
+    
+    步骤一：导入包
+    <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.11.0</version>
+    </dependency>
+    
+    步骤二：配置JSON乱码问题
+        <!--json乱码-->
+        <mvc:annotation-driven>
+            <mvc:message-converters>
+                <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                    <constructor-arg value="UTF-8"/>
+                </bean>
+                <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                    <property name="objectMapper">
+                        <bean class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+                            <property name="failOnEmptyBeans" value="false"></property>
+                        </bean>
+                    </property>
+                </bean>
+            </mvc:message-converters>
+        </mvc:annotation-driven>
+        
+    步骤三：直接使用即可
+    
+3.使用json
+```java
+    package com.zhangbin.controller;
+    
+    import com.fasterxml.jackson.core.JsonProcessingException;
+    import com.fasterxml.jackson.databind.ObjectMapper;
+    import com.fasterxml.jackson.databind.SerializationFeature;
+    import com.zhangbin.pojo.User;
+    import com.zhangbin.utils.JsonUtils;
+    import org.springframework.web.bind.annotation.RequestMapping;
+    import org.springframework.web.bind.annotation.ResponseBody;
+    import org.springframework.web.bind.annotation.RestController;
+    
+    import java.util.ArrayList;
+    import java.util.Date;
+    
+    /**
+     * 认认真真敲代码，开开心心每一天
+     *
+     * @Date 2020/8/1-22:55
+     */
+    //@Controller
+    @RestController//这个注解表示该方法下的所有都不会走视图解析器，会直接返回一个字符串，和ResponseBody差不多
+    public class UserController {
+    
+        //【1】json输出对象
+        @ResponseBody//这个注解表示不会走视图解析器，会直接返回一个字符串，配合@Controller注解使用
+        @RequestMapping( "/json")
+    //  @RequestMapping(value = "/json",produces = "application/json;charset=utf-8")
+        //produces = "application/json;charset=utf-8 解决JSON乱码问题
+        public String test() throws JsonProcessingException {
+    //        创建jackson
+            ObjectMapper mapper = new ObjectMapper();
+    
+            User user = new User(2, "张斌");
+    
+    //        将user数据转化为json
+            String string = mapper.writeValueAsString(user);
+            return string;
+        }
+    
+    //   【2】json输出数组
+        @RequestMapping( "/json1")
+        public String test1() throws JsonProcessingException {
+    
+            ObjectMapper mapper = new ObjectMapper();
+    
+            ArrayList<User> list = new ArrayList<User>();
+    
+            User user = new User(1, "张斌");
+            User user1 = new User(2, "张斌");
+            User user2 = new User(3, "张斌");
+            User user3 = new User(4, "张斌");
+    
+            list.add(user);
+            list.add(user1);
+            list.add(user2);
+            list.add(user3);
+    
+    
+            String string = mapper.writeValueAsString(list);
+            return string;
+        }
+    
+        //【3】json输出日期
+        @RequestMapping( "/json2")
+        public String test2() throws JsonProcessingException {
+    
+            ObjectMapper mapper = new ObjectMapper();
+    //创建日期
+            Date date = new Date();
+    //        方式一
+    //        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    //        format.format(date);
+    
+    //        方式二
+            mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+    
+            return mapper.writeValueAsString(date);
+        }
+    
+        //【4】json输出日期，使用自定义工具类
+        @RequestMapping( "/json3")
+        public String test3() throws JsonProcessingException {
+            
+    //        将数据传输给工具类，获取JSON时间
+            return JsonUtils.getJson(new Date(), "yyyy-MM-dd HH:mm:ss");
+        }
+    }
+
+```
+
+4.学习JSON工具类的思想
+```java
+    package com.zhangbin.utils;
+    
+    import com.fasterxml.jackson.core.JsonProcessingException;
+    import com.fasterxml.jackson.databind.ObjectMapper;
+    import com.fasterxml.jackson.databind.SerializationFeature;
+    
+    import java.text.SimpleDateFormat;
+    
+    /**
+     * 认认真真敲代码，开开心心每一天
+     *
+     * @Date 2020/8/2-21:00
+     */
+    public class JsonUtils {
+        
+    //    重载调用其他方法即可，方便。
+        public static String getJson(Object object){
+            return getJson(object,"yyyy-MM-dd HH:mm:ss");
+        }
+    
+        public static String getJson(Object object,String dateFormat){
+    
+            ObjectMapper mapper = new ObjectMapper();
+            //处理日期
+            mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
+            SimpleDateFormat date = new SimpleDateFormat(dateFormat);
+            mapper.setDateFormat(date);
+    
+            try {
+                //正常执行返回数据
+                return mapper.writeValueAsString(object);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+                //报错返回空
+                 return null;
+        }
+    }
+
+```

@@ -7,8 +7,10 @@
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-02-helloMVC/SpringMVC-02-helloMVC.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-02-helloMVC/SpringMVC-02-helloMVC.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-03-annotaion/SpringMVC-03-annotaion.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-03-annotaion/SpringMVC-03-annotaion.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-04-controller/SpringMVC-04-controller.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-04-controller/SpringMVC-04-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-07-intercepter/SpringMVC-07-intercepter.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-07-intercepter/SpringMVC-07-intercepter.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-2020-07-28.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-2020-07-28.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-JSON-01/SpringMVC-JSON-01.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/SpringMVC-JSON-01/SpringMVC-JSON-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC-2020-07-28/springMVC-06-Ajax/springMVC-06-Ajax.iml" filepath="$PROJECT_DIR$/SpringMVC-2020-07-28/springMVC-06-Ajax/springMVC-06-Ajax.iml" />
     </modules>
   </component>
 </project>

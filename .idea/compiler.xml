@@ -9,6 +9,8 @@
         <module name="SpringMVC-01-servlet" />
         <module name="SpringMVC-03-annotaion" />
         <module name="SpringMVC-04-controller" />
+        <module name="springMVC-06-Ajax" />
+        <module name="SpringMVC-07-intercepter" />
         <module name="SpringMVC-JSON-01" />
       </profile>
     </annotationProcessing>
@@ -19,6 +21,8 @@
       <module name="SpringMVC-04-controller" target="1.5" />
       <module name="SpringMVC-05-json" target="1.5" />
       <module name="SpringMVC-05-JSON" target="1.5" />
+      <module name="springMVC-06-Ajax" target="1.5" />
+      <module name="SpringMVC-07-intercepter" target="1.5" />
       <module name="SpringMVC-2020-07-28" target="1.5" />
       <module name="SpringMVC-JSON-01" target="1.5" />
     </bytecodeTargetLevel>

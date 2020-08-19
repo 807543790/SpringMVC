@@ -1,16 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: zhangbin
-  Date: 2020/8/1
-  Time: 22:52
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
     <title>$Title$</title>
+    <script src="static/js/jquery-3.5.1.js"></script>
+    <script>
+      $.post({
+          url:
+          data:
+          success:
+      })
+    </script>
   </head>
   <body>
-  $END$
+
+  <input type="text">
+  &nbsp;
   </body>
 </html>

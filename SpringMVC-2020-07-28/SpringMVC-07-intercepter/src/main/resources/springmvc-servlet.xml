@@ -40,9 +40,13 @@
 
     <!--配置拦截器-->
     <mvc:interceptors>
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.zhangbin.config.MyInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            <bean class="com.zhangbin.config.MyInterceptor"></bean>
+            <bean class="com.zhangbin.config.userIInterceptor"></bean>
         </mvc:interceptor>
     </mvc:interceptors>
 

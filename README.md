@@ -464,4 +464,101 @@ web.xml文件添加
             String string = JSON.toJSONString(list);
     
             return string;
-        }        
+        }
+        
+##06-ajax
+```jsp
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <html>
+    <head>
+        <title>Title</title>
+        <script src="static/js/jquery-3.5.1.js"></script>
+        <script>
+            window.onload = function () {
+                $("#btn").click(
+                    function () {
+                        $.post({
+                            url:"/a2",
+                            success:function (data) {
+    
+                                console.log(data);
+    
+                                var html ="";
+    
+                                for(let i=0;i<data.length;i++){
+                                    html += "<tr>" +
+                                            "<td>" + data[i].id + "</td>"+
+                                             "<td>" + data[i].name +"</td>"+
+                                             "<td>" + data[i].age + "</td>"+
+                                        "</tr>"
+                                }
+    
+                                $("#Trtest").html(html)
+                            }
+                        })
+                    }
+                )
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button" value="获取数据" id="btn">
+        <table>
+            <tr>
+                <td>id</td>
+                <td>名称</td>
+                <td>年龄</td>
+            </tr>
+            <tbody id="Trtest">
+    
+            </tbody>
+        </table>
+    </body>
+    </html>
+
+```
+
+#07-拦截器
+1.自定义拦截器
+```java
+    package com.zhangbin.config;
+    
+    import org.springframework.web.servlet.HandlerInterceptor;
+    import org.springframework.web.servlet.ModelAndView;
+    
+    import javax.servlet.http.HttpServletRequest;
+    import javax.servlet.http.HttpServletResponse;
+    
+    /**
+     * 认认真真敲代码，开开心心每一天
+     *
+     * @Date 2020/8/19-15:28
+     */
+    public class MyInterceptor implements HandlerInterceptor {
+        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+            System.out.println("===========执行前===================");
+            return true;
+        }
+    
+        public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+            System.out.println("===========执行后===================");
+        }
+    
+        public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+            System.out.println("===========清理===================");
+        }
+    }
+
+```
+2.配置拦截器
+```xml
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.zhangbin.config.MyInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+```
